@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<h2>LIST USERS</h2>
+<table>
+    <thead>
+    <tr>
+        <th>
+            id
+        </th>
+        <th>
+            name
+        </th>
+        <th>
+            email
+        </th>
+        <th>
+            age
+        </th>
+    </tr>
+
+    </thead>
+    <tbody>
+    <tr th:each="user: ${users}">
+        <td>
+            <span th:text="${user.id}">color</span>
+        </td>
+        <td><span th:text="${user.name}">model</span>
+        </td>
+        <td>
+            <span th:text="${user.email}">year</span>
+        </td>
+        <td>
+            <span th:text="${user.age}">year</span>
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+<a href="/users/newUser" >Add user</a>
+<a href="/users/user/editUser" >Update user</a>
+<a href="/users/delete" >Delete</a>
+
+</body>
+</html>
